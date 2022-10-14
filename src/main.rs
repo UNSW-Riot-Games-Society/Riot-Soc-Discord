@@ -23,6 +23,14 @@ impl EventHandler for Handler {
             if let Err(why) = msg.channel_id.say(&ctx.http, "Pong!").await {
                 println!("Error sending message: {:?}", why);
             }
+        } else if msg.content == "silence" {
+            if let Err(why) = msg.channel_id.say(&ctx.http, "https://static.wikia.nocookie.net/leagueoflegends/images/9/95/Cleanse.png/revision/latest?cb=20180514002812").await {
+                println!("Error sending message: {:?}", why);
+            }
+        } else if msg.content == "who" {
+            if let Err(why) = msg.channel_id.say(&ctx.http, "asked").await {
+                println!("Error sending message: {:?}", why);
+            }
         }
     }
 
